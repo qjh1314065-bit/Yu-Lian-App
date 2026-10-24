@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Refactoring UI Neutrals & Surfaces */
+    --bg-canvas: #06140F;           /* 60% Dominant deep pitch forest */
+    --bg-surface: #0A1F18;          /* 30% Structural surface card */
+    --bg-surface-elevated: #0F2D23; /* Elevated hover & modal surface */
+    --bg-surface-subtle: #081912;   /* Inset secondary container */
+
+    /* Hairline borders & Dividers (Refactoring UI: prefer subtle contrast over heavy borders) */
+    --border-subtle: rgba(255, 255, 255, 0.06);
+    --border-court: rgba(34, 84, 67, 0.4);
+    --border-strong: rgba(204, 255, 0, 0.4);
+    --border-focus: #CCFF00;
+
+    /* Typographic Hierarchy */
+    --text-primary: #F5F7F5;   /* 95% High contrast warm white */
+    --text-secondary: #B3C4B8; /* 70% Balanced reading text */
+    --text-muted: #7E9385;     /* 50% Metadata & helper labels */
+    --text-dim: #4D6154;       /* 30% Inactive / subtle dividers */
+
+    /* 10% High-Intent Accents (Refactoring UI: strict color budget) */
+    --accent-volt: #CCFF00;
+    --accent-volt-hover: #B8E600;
+    --accent-volt-subtle: rgba(204, 255, 0, 0.08);
+
+    /* Semantic States (Color + Icon/Label dual-encoding) */
+    --state-success: #10B981;
+    --state-warning: #F59E0B;
+    --state-danger: #EF4444;
+    --state-info: #06B6D4;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    letter-spacing: -0.015em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Badminton court lines subtle background pattern */
+.bg-court-pattern {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(20, 58, 45, 0.35) 0%, transparent 70%),
+    linear-gradient(to right, rgba(30, 80, 62, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 80, 62, 0.08) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+/* Subtle court grid surface for tactical cards */
+.bg-tactical-grid {
+  background-image: radial-gradient(rgba(204, 255, 0, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom athletic scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #06140F;
+}
+::-webkit-scrollbar-thumb {
+  background: #14382B;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1E4E3D;
+}
+
+/* Smooth motion & tactile feedback */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

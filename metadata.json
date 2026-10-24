@@ -1,0 +1,6 @@
+{
+  "name": "羽练 Badminton Coach",
+  "description": "面向中国业余羽毛球爱好者的智能训练计划定制与执行打卡系统，提供科学步法、手法、体能与实战对抗方案及数据看板。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
